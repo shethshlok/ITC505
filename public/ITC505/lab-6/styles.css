@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "sidebar content advertisement";
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.content {
+    grid-area: content;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+/* Styling for the problem solver */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 60vh;
+}
+
+.content input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.content button:hover {
+    background-color: #0056b3;
+}
+
+.content p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Styling for the menu side-bar */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #007bff;
+    width: 85%;
+}
+
+.advertisement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+    padding: 20px;
+}
+
+.advertisement img {
+    max-width: 100%;
+    height: auto;
+}
+
+
