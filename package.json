@@ -4,7 +4,7 @@
     "morgan": "^1.10.0"
   },
   "scripts": {
-    "build": "echi 'Build not set up'",
+    "build": "echo 'Build not set up'",
     "start": "node server.js"
   }
 }
