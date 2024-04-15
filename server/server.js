@@ -31,6 +31,6 @@ const publicServedFilesPath = path.join(__dirname, 'public');
 server.use(express.static(publicServedFilesPath));
 
 // Adjust the port for Vercel
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 server.listen(PORT, () => console.log(`Ready on port ${PORT}!`));
