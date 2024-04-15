@@ -33,8 +33,8 @@ server.use(express.static(publicServedFilesPath));
 // The server uses port 80 by default unless you start it with the extra
 // command line argument 'local' like this:
 //       node server.js local
-let port = 80;
+let port = process.env.PORT || 3000;
 if (process.argv[2] === 'local') {
  port = 8080;
 }
-server.listen(port, () => console.log('Ready on localhost!'));
+server.listen(port, () => console.log('Ready on port ' + port));
