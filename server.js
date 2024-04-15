@@ -15,15 +15,27 @@ server.get('/do_a_random', (req, res) => {
 
 // New route to handle POST requests for the Mad Lib story
 server.post('/generate-story', (req, res) => {
- const { noun1, adjective1, pluralNoun1, noun2, adjective2 } = req.body;
+   const { noun1, adjective1, pluralNoun1, noun2, adjective2 } = req.body;
 
- const story = `
-    Once upon a time, in a ${adjective1} world, there was a ${noun1} who loved ${pluralNoun1}. 
-    Every day, this ${noun1} would watch ${pluralNoun1} on their ${noun2}, dreaming of the day they could be a part of the ${adjective2} ${pluralNoun1}.
- `;
+   if (!noun1 || !adjective1 || !pluralNoun1 || !noun2 || !adjective2) {
+       res.send(`
+         <h1>Submission Failed</h1>
+         <p>Please fill out ALL fields</p>
+         <a href="/">Go Back to Form</a>
+       `);
+       return;
+   }
 
- // Send the generated story back in the response
- res.json({ story });
+   const madLib = `
+       Once upon a time, in a ${adjective1} world, there was a ${noun1} who loved ${pluralNoun1}. 
+       Every day, this ${noun1} would watch ${pluralNoun1} on their ${noun2}, dreaming of the day they could be a part of the ${adjective2} ${pluralNoun1}.
+   `;
+
+   res.send(`
+     <h1>Submission Successful</h1>
+     <p>${madLib}</p>
+     <a href="/">Go Back to Form</a>
+   `);
 });
 
 // Setup static page serving for all the pages in "public"
