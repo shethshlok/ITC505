@@ -1,12 +1,14 @@
 {
-    "builds": [
+    "version": 2,
+    "routes": [
+      { "handle": "filesystem" },
       {
-        "src": "server.js",
-        "use": "@vercel/node"
+        "src": "/generate-story",
+        "dest": "/server.js"
       },
       {
-        "src": "public/**",
-        "use": "@vercel/static"
+        "src": "/(.*)",
+        "dest": "/public/$1"
       }
     ]
   }
