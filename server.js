@@ -30,7 +30,11 @@ server.post('/generate-story', (req, res) => {
 const publicServedFilesPath = path.join(__dirname, 'public');
 server.use(express.static(publicServedFilesPath));
 
-// Adjust the port for Vercel
-const PORT = 3000;
-
-server.listen(PORT, () => console.log(`Ready on port ${PORT}!`));
+// The server uses port 80 by default unless you start it with the extra
+// command line argument 'local' like this:
+//       node server.js local
+let port = 80;
+if (process.argv[2] === 'local') {
+ port = 8080;
+}
+server.listen(port, () => console.log('Ready on localhost!'));
