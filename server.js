@@ -17,14 +17,14 @@ server.get('/do_a_random', (req, res) => {
 server.post('/generate-story', (req, res) => {
    const { noun1, adjective1, pluralNoun1, noun2, adjective2 } = req.body;
 
-   if (!noun1 || !adjective1 || !pluralNoun1 || !noun2 || !adjective2) {
-       res.send(`
-         <h1>Submission Failed</h1>
-         <p>Please fill out ALL fields</p>
-         <a href="/">Go Back to Form</a>
-       `);
-       return;
-   }
+  //  if (!noun1 || !adjective1 || !pluralNoun1 || !noun2 || !adjective2) {
+  //      res.send(`
+  //        <h1>Submission Failed</h1>
+  //        <p>Please fill out ALL fields</p>
+  //        <a href="/">Go Back to Form</a>
+  //      `);
+  //      return;
+  //  }
 
    const madLib = `
        Once upon a time, in a ${adjective1} world, there was a ${noun1} who loved ${pluralNoun1}. 
