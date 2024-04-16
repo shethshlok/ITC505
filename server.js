@@ -15,7 +15,7 @@ server.get('/do_a_random', (req, res) => {
 
 // New route to handle POST requests for the Mad Lib story
 server.post('/generate-story', (req, res) => {
-   const { noun1, adjective1, pluralNoun1, noun2, adjective2 } = req.body;
+  //  const { noun1, adjective1, pluralNoun1, noun2, adjective2 } = req.body;
 
   //  if (!noun1 || !adjective1 || !pluralNoun1 || !noun2 || !adjective2) {
   //      res.send(`
